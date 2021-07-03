@@ -1,13 +1,44 @@
-button {
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
+/* ========================================index============================================= */
+* {
+  font-family: 'Permanent Marker', cursive;
+font-family: 'Yomogi', cursive;
+}
+
+header h1{
+  font-family: 'Akaya Kanadaka', cursive;
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  height: 100px;
+  text-shadow: 0 0 3px #fc02d2, 0 0 5px #82828b;
+  font-size: 100px;
+}
+
+header nav li{
+  float: right;
+    padding: 0 30px;
+    margin-top: 20px;
+  font-family: 'Akaya Kanadaka', cursive;
+  font:boold;
+  font-size: medium;
+  width: 100px;
+  height: 100px;
+  background-color: #EBB0CE;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0%   {background-color:#C493AD; left:0px; top:0px;}
+  25%  {background-color:#EBB0CE; left:200px; top:0px;}
+  50%  {background-color:#DEA7C3; left:200px; top:200px;}
+  75%  {background-color:#5E4753; left:0px; top:200px;}
+  100% {background-color:#9E778B; left:0px; top:0px;}
+}
   
+img {
+
+  border-radius: 50%;
+}

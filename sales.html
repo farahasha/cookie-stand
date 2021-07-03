@@ -5,14 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SALES</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>SALES DATA</h1>
+        
         <form>
+            
             <input type="button" value="GO BACK" onclick="history.back()">
+            <style>
+             button   {
+                    border-radius: 50%;
+                }
+        </style>
            </form>
     </header>
-    <script
+
+    <main>
+   
+    <!-- =============================================form=============================================== -->
+
+              <form id="SalmonForm">
+                <fieldset>
+                    <legend>SalmonForm</legend>
+                    <label for="namefield">Location:</label>
+                    <input type="text" id="namefield">
+                    
+                    <label for="mincust">Minimum</label>
+                    <input type="number" id="mincust">
+                    
+                    <label for="maxcust">Maximum</label>
+                    <input type="number" id="maxcust">
+                    
+                    <label for="avgCookies">Average</label>
+                    <input type="number" id="avgCookies" step="any">
+    
+                    <input type="submit" value="submit">
+    
+                </fieldset>
+            </form>
+            <div id="result">
+            </div>
+
+            <div id='creatTable'></div>
+
+            <style>
+                table, td, th {
+        background-color: antiquewhite;
+        border: 1px solid black;
+        font-family: 'Yomogi', cursive;;
+        
+                }
+                
+                table {
+                  width: 100%;
+                margin-top: 60px;
+                border-collapse:collapse;
+                height:200px;
+                font: bold;
+                }
+            
+                body{
+            background-image: url("/img/R.jpg");
+          
+           }
+                </style>
+</main>
+
+    <script src="app.js"></script>
+</main>
 </body>
 </html>
