@@ -7,10 +7,6 @@ font-family: 'Yomogi', cursive;
 header h1{
   font-family: 'Akaya Kanadaka', cursive;
   position: relative;
-  /* nav-up: 100px;
-  width: 100%;
-  padding: 10px;
-  height: 100px; */
   text-shadow: 0 0 3px #fc02d2, 0 0 5px #82828b;
   font-size: 100px;
   text-align: center;
@@ -18,7 +14,7 @@ header h1{
 
 }
 header img{
-display: inline-block;
+display: inline-;
 float: right; 
 margin-bottom: 20px;
 border-radius: 50%;
@@ -89,7 +85,6 @@ pre h3{
 h1 .hd{
   text-align: center;
   margin-top: 10%;
-  /* margin-bottom: 30%; */
    padding-top: 50px;
   padding-bottom: 50px;
   background-color:antiquewhite;

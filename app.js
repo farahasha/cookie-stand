@@ -9,7 +9,6 @@ function random(min, max) {
 }
 
 
-// let shop = [];
 let storedCreatedObj = [];
 
 function salmone(name, min, max, avg) {
@@ -20,9 +19,6 @@ function salmone(name, min, max, avg) {
   this.cookieTotal = 0;
   this.calc = [];
   this.cookie = [];
-  // this.total = [];
-  // this.newRow = [];
-  // this.hourlySales = [];
   console.log(this);
   
   storedCreatedObj.push(this);
@@ -60,9 +56,6 @@ let Lima = new salmone('Lima', 2, 16, 4.6, 0);
 
 console.log(storedCreatedObj);
 
-// Seattle.calco();
-
-
 
 let parent = document.getElementById('creatTable');
 console.log(parent);
@@ -91,9 +84,6 @@ function makeheader() {
   thlement2.textContent = 'Daily total';
 
 }
-
-
-
 
 
 salmone.prototype.render = function () {
@@ -187,15 +177,3 @@ function handleSubmit(event) {
   newShop.render();
   makefooter();
 }
-
-
-// Seattle.cust();
-// Seattle.calco();
-// Tokyo.cust();
-// Tokyo.calco();
-// Dubai.cust();
-// Dubai.calco();
-// Paris.cust();
-// Paris.calco();
-// Lima.cust();
-// Lima.calco();
