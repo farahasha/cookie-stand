@@ -1,6 +1,6 @@
 "use strict";
 
-let hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+let open = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
 
 function random(min,max)
@@ -13,16 +13,16 @@ function random(min,max)
 let shop = [];
 let storedCreatedObj = [];
 
-function salmonecookies(name,minCust, maxCust, avgSale) {
+function salmone(name,min, max, avg) {
 this.name=name;
-this.minCust=minCust;
-this.maxCust=maxCust;
-this.avgSale=avgSale;
+this.min=min;
+this.max=max;
+this.avg=avg;
 this.cookieTotal=0;
-this.calccust = [];
-this.cookiesech=[];
+this.calc = [];
+this.cookie=[];
 this.total=[];
-this.newrow=[];
+this.newRow=[];
 this. hourlySales= [];
 
 storedCreatedObj.push(this);
@@ -32,31 +32,31 @@ storedCreatedObj.push(this);
 
 
 
-salmonecookies.prototype.cust= function(){
+salmone.prototype.cust= function(){
   
-  for(let i = 0; i < hours.length; i++){
-    this.calccust.push(random(this.minCust,this.maxCust));
+  for(let i = 0; i < open.length; i++){
+    this.calc.push(random(this.min,this.max));
     
     
   }
   
 }
 
-salmonecookies.prototype.calccookies=function(){
-  for(let i = 0; i < hours.length; i++){
+salmone.prototype.calc=function(){
+  for(let i = 0; i < open.length; i++){
     
-    this.cookiesech.push(Math.floor(this.avgSale*this.calccust[i]));
+    this.cookie.push(Math.floor(this.avg*this.calc[i]));
   
-    this.cookieTotal += this.cookiesech[i];
+    this.cookieTotal += this.cookie[i];
 
   }
 }
 
-let Seattle = new salmonecookies ('Seattle',23,65,6.3,0);
-let Tokyo =new salmonecookies('Tokyo',3,24,1.2,0);
-  let Dubai =new salmonecookies('Dubai',11,38,3.7,0);
-  let Paris =new salmonecookies('PAris',20,38,2.3,0);
-  let Lima =new salmonecookies('Lima',2,16,4.6,0);  
+let Seattle = new salmone ('Seattle',23,65,6.3,0);
+let Tokyo =new salmone('Tokyo',3,24,1.2,0);
+  let Dubai =new salmone('Dubai',11,38,3.7,0);
+  let Paris =new salmone('PAris',20,38,2.3,0);
+  let Lima =new salmone('Lima',2,16,4.6,0);  
 
   console.log( storedCreatedObj);
 
@@ -79,10 +79,10 @@ function makeheader (){
  headingRow.appendChild(nameData);
  nameData.textContent='name';
  
- for (let i = 0; i < hours.length; i++) {
+ for (let i = 0; i < open.length; i++) {
 let thlement = document.createElement('th');
 headingRow.appendChild(thlement);  
-thlement.textContent= hours[i]; 
+thlement.textContent= open [i]; 
 
  }
  let thlement2 = document.createElement('th');
@@ -95,7 +95,7 @@ makeheader();
 
 
 
-salmonecookies.prototype.render =function(){
+salmone.prototype.render =function(){
 let drow = document.createElement('tr');
 tableEl.appendChild(drow);
 
@@ -105,10 +105,10 @@ drow.appendChild(namdata);
 namdata.textContent=this.name;
 
 
-for (let i = 0; i < hours.length; i++) {
+for (let i = 0; i < open.length; i++) {
   let tdel =document.createElement('td');
   drow.appendChild(tdel); 
-tdel.textContent=this.cookiesech[i];
+tdel.textContent=this.cookie[i];
 
 }
 
@@ -120,7 +120,7 @@ totalday.textContent=this.cookieTotal;
  
 for(let i = 0; i < storedCreatedObj.length; i++){
   storedCreatedObj[i].cust();  
-  storedCreatedObj[i].calccookies();
+  // storedCreatedObj[i].calc ();
   storedCreatedObj[i].render();
   
 }
@@ -130,17 +130,17 @@ console.log();
 let footerrow =document.createElement('tr');
 function makefooter(){
 
-tableEl.appendChild(footerrow);
+tableEl.appendChild(footerRow);
 let footerht =document.createElement('td');
-footerrow.appendChild(footerht);
+footerRow.appendChild(footerht);
 footerht.textContent='Total';
 
 
     let megaTotal = 0;
-for (let i = 0; i < hours.length; i++) {
+for (let i = 0; i < open.length; i++) {
     let sum = 0;
     for (var j = 0; j < storedCreatedObj.length; j++) {
-      sum += storedCreatedObj[j].cookiesech[i];
+      sum += storedCreatedObj[j].cookie[i];
     }
 
     megaTotal += sum;
@@ -148,12 +148,12 @@ for (let i = 0; i < hours.length; i++) {
     console.log(sum);
      
     let tdEl = document.createElement('td');
-    footerrow.appendChild(tdEl);
+    footerRow.appendChild(tdEl);
     tdEl.textContent = sum;
   
   }
   let finaltd = document.createElement('td');
-  footerrow.appendChild(finaltd);
+  footerRow.appendChild(finaltd);
   finaltd.textContent=megaTotal;
 }
 makefooter();
@@ -169,22 +169,22 @@ function handleSubmit(event){
   let location =event.target.location.value;
 console.log(location);
 
-  let mini = parseInt(event.target.mini.value);
-  console.log(mini);
-  let maxi = parseInt(event.target.maxi.value)
-  console.log(maxi);
+  let mini= parseInt(event.target.min.value);
+  console.log(min);
+  let max = parseInt(event.target.max.value)
+  console.log(max);
 
 
   let avg =parseFloat(event.target.Avg.value)
  
   console.log(avg);
 
-  let newobj = new  salmonecookies( location,mini,maxi,avg,);
+  let newShop = new  salmone( location,min,max,avg,);
   
- newobj.cust();
- newobj.calccookies();
-newobj.render();
-footerrow.textContent='';
+ newShop.cust();
+ newShop.calc();
+newShop.render();
+footerRow.textContent='';
 makefooter();
 }
 
