@@ -116,6 +116,9 @@ for (let i = 0; i < storedCreatedObj.length; i++) {
 
 
 }
+
+console.log();
+
 makefooter();
 
 function makefooter() {
@@ -160,12 +163,13 @@ function handleSubmit(event) {
   console.log(location);
 
   let mini = parseInt(event.target.mincust.value);
-  let max = parseInt(event.target.maxcust.value)
+  console.log(mini);
+
+  let max = parseInt(event.target.maxcust.value);
   console.log(max);
 
 
   let avg = parseFloat(event.target.avgCookies.value)
-
   console.log(avg);
 
   let newShop = new salmone(location, mini, max, avg,);
@@ -175,5 +179,7 @@ function handleSubmit(event) {
   let deleted = tableEl.rows.length - 1; 
   tableEl.deleteRow(deleted)
   newShop.render();
+  // footerRow.textContent='';
   makefooter();
+
 }
