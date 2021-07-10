@@ -32,18 +32,18 @@
                 <fieldset>
                     <legend>SalmonForm</legend>
                     <label for="namefield">Location:</label>
-                    <input type="text" id="namefield">
+                    <input type="text" id="namefield"  class="string"   value="data" required >
                     
                     <label for="mincust">Minimum</label>
-                    <input type="number" id="mincust">
+                    <input type="number" id="mincust"  class="number"   value="data"   required>
                     
                     <label for="maxcust">Maximum</label>
-                    <input type="number" id="maxcust">
+                    <input type="number" id="maxcust"   class="number"  value="data" required >
                     
                     <label for="avgCookies">Average</label>
-                    <input type="number" id="avgCookies" step="any">
-    
-                    <input type="submit" value="submit">
+                    <input type="float"  id="avgCookies" class="number"  value="data"  required>
+                    
+                    <input type="submit" value="submit"   class="button"   >
     
                 </fieldset>
             </form>
